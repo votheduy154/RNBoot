@@ -19,6 +19,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.appevents.AppEventsLogger;
 
+import io.underscope.react.fbak.RNAccountKitPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -66,7 +67,8 @@ public class MainApplication extends NavigationApplication {
     return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
         new VectorIconsPackage(),
-        new FBSDKPackage(mCallbackManager)
+        new FBSDKPackage(mCallbackManager),
+        new RNAccountKitPackage()
     );
   }
 

@@ -64,10 +64,13 @@
     <dict>
       <key>CFBundleURLSchemes</key>
       <array>
+        <string>ak419722941786462</string>
         <string>fb419722941786462</string>
       </array>
     </dict>
   </array>
+  <key>AccountKitClientToken</key>
+  <string>718f9266933e9508391fc3609d958b75</string>
   <key>FacebookAppID</key>
   <string>419722941786462</string>
   <key>FacebookDisplayName</key>
