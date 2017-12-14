@@ -12,10 +12,24 @@ import com.facebook.soloader.SoLoader;
 import android.support.annotation.Nullable;
 import com.reactnativenavigation.NavigationApplication;
 
+import android.content.Intent;
+import com.reactnativenavigation.controllers.ActivityCallbacks;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.facebook.appevents.AppEventsLogger;
+
+
 import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends NavigationApplication {
+
+  private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
+
+  protected static CallbackManager getCallbackManager() {
+    return mCallbackManager;
+  }
 
   // private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
   //   @Override
@@ -44,7 +58,6 @@ public class MainApplication extends NavigationApplication {
 
   @Override
   public boolean isDebug() {
-      // Make sure you are using BuildConfig from your own application
       return BuildConfig.DEBUG;
   }
 
@@ -52,18 +65,28 @@ public class MainApplication extends NavigationApplication {
   protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-        new VectorIconsPackage()
+        new VectorIconsPackage(),
+        new FBSDKPackage(mCallbackManager)
     );
-  }
-
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
   }
 
   @Override
   public List<ReactPackage> createAdditionalReactPackages() {
     return getPackages();
   }
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    setActivityCallbacks(new ActivityCallbacks() {
+      @Override
+      public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+      }
+    });
+    SoLoader.init(this, /* native exopackage */ false);
+    FacebookSdk.sdkInitialize(getApplicationContext());
+    AppEventsLogger.activateApp(this);
+  }
+
 }

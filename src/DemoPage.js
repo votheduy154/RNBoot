@@ -6,9 +6,6 @@ class DemoPage extends React.Component {
     super(props);
     this.state = {};
   }
-  componentWillMount() {
-    console.log('asdasdasd');
-  }
   onClick() {
     this.props.navigator.push({
       screen: 'RNBoot.HomeScreen',
@@ -19,15 +16,12 @@ class DemoPage extends React.Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#999' }}>
         <Text style={{ fontSize: 30 }}>
-          A basic button component that sh ould render nicely on any platform. Supports a minimal
-          level of customization.
+          A basic button component that sh ould render nicely on any platform. Supports a minimal level of
+          customization.
         </Text>
         <Button title="Learn More" color="#841584" onPress={() => this.onClick()} />
       </View>
     );
-  }
-  componentDidMount() {
-    console.log('cacac');
   }
 }
 export default DemoPage;
