@@ -21,6 +21,8 @@ import com.facebook.appevents.AppEventsLogger;
 
 import io.underscope.react.fbak.RNAccountKitPackage;
 
+import com.microsoft.codepush.react.CodePush;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,6 +60,16 @@ public class MainApplication extends NavigationApplication {
   // }
 
   @Override
+  public String getJSMainModuleName() {
+    return "index";
+  }
+
+  @Override
+  public String getJSBundleFile() {
+      return CodePush.getJSBundleFile();
+  }
+
+  @Override
   public boolean isDebug() {
       return BuildConfig.DEBUG;
   }
@@ -68,7 +80,8 @@ public class MainApplication extends NavigationApplication {
         new MainReactPackage(),
         new VectorIconsPackage(),
         new FBSDKPackage(mCallbackManager),
-        new RNAccountKitPackage()
+        new RNAccountKitPackage(),
+        new CodePush("jBkuV7VDQYOhSBH6GNHRhZxOo4GUfc6e71db-3dfa-4437-aa10-1fc24d167e6d", MainApplication.this, BuildConfig.DEBUG)
     );
   }
 

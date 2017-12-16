@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CodePushDeploymentKey</key>
+	<string>pgzHmLN4S3nmyUnbBvLrBfVMYSznfc6e71db-3dfa-4437-aa10-1fc24d167e6d</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -40,11 +42,11 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
-  <key>NSAppTransportSecurity</key>
-  <dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-  </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
@@ -59,28 +61,28 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 	</array>
-  <key>CFBundleURLTypes</key>
-  <array>
-    <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>ak419722941786462</string>
-        <string>fb419722941786462</string>
-      </array>
-    </dict>
-  </array>
-  <key>AccountKitClientToken</key>
-  <string>718f9266933e9508391fc3609d958b75</string>
-  <key>FacebookAppID</key>
-  <string>419722941786462</string>
-  <key>FacebookDisplayName</key>
-  <string>loginSDK</string>
-  <key>LSApplicationQueriesSchemes</key>
-  <array>
-    <string>fbapi</string>
-    <string>fb-messenger-api</string>
-    <string>fbauth2</string>
-    <string>fbshareextension</string>
-  </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ak419722941786462</string>
+				<string>fb419722941786462</string>
+			</array>
+		</dict>
+	</array>
+	<key>AccountKitClientToken</key>
+	<string>718f9266933e9508391fc3609d958b75</string>
+	<key>FacebookAppID</key>
+	<string>419722941786462</string>
+	<key>FacebookDisplayName</key>
+	<string>loginSDK</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 </dict>
 </plist>

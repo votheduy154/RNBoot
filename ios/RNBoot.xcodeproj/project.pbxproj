@@ -21,6 +21,8 @@
 		04566E421FE2EB4C00C0F5D1 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566E1B1FE2EB4B00C0F5D1 /* AccountKit.framework */; };
 		04566E441FE2EB5400C0F5D1 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04566E431FE2EB5300C0F5D1 /* AccountKitStrings.bundle */; };
 		04566E9D1FE2EC2B00C0F5D1 /* libRNAccountKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566E4A1FE2EB8500C0F5D1 /* libRNAccountKit.a */; };
+		04566EED1FE309BB00C0F5D1 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566EC31FE3099900C0F5D1 /* libCodePush.a */; };
+		04566EEF1FE309D800C0F5D1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566EEE1FE309D800C0F5D1 /* libz.tbd */; };
 		04E82BAF1FDFF3CD00EE53D1 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E82BAD1FDFF3BC00EE53D1 /* libReactNativeNavigation.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -158,6 +160,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = D2C7C6901CD1552900C9B392;
 			remoteInfo = RNAccountKit;
+		};
+		04566EC21FE3099900C0F5D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = CodePush;
+		};
+		04566EC41FE3099900C0F5D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F886647B1F4ADB500036D01B;
+			remoteInfo = "CodePush-tvOS";
 		};
 		04E82B8F1FDFF38500EE53D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -368,6 +384,8 @@
 		04566E1B1FE2EB4B00C0F5D1 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = "../node_modules/react-native-facebook-account-kit/ios/AccountKit.framework"; sourceTree = "<group>"; };
 		04566E431FE2EB5300C0F5D1 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AccountKitStrings.bundle; path = "../node_modules/react-native-facebook-account-kit/ios/AccountKitStrings.bundle"; sourceTree = "<group>"; };
 		04566E451FE2EB8500C0F5D1 /* RNAccountKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAccountKit.xcodeproj; path = "../node_modules/react-native-facebook-account-kit/ios/RNAccountKit.xcodeproj"; sourceTree = "<group>"; };
+		04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		04566EEE1FE309D800C0F5D1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		04E82BA81FDFF3BC00EE53D1 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -413,6 +431,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04566EED1FE309BB00C0F5D1 /* libCodePush.a in Frameworks */,
+				04566EEF1FE309D800C0F5D1 /* libz.tbd in Frameworks */,
 				04566E9D1FE2EC2B00C0F5D1 /* libRNAccountKit.a in Frameworks */,
 				045453151FE2DFB10076EFC8 /* libRCTFBSDK.a in Frameworks */,
 				04E82BAF1FDFF3CD00EE53D1 /* libReactNativeNavigation.a in Frameworks */,
@@ -538,6 +558,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		04566EBE1FE3099800C0F5D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04566EC31FE3099900C0F5D1 /* libCodePush.a */,
+				04566EC51FE3099900C0F5D1 /* libCodePush.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		04E82B871FDFF38300EE53D1 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +594,7 @@
 		04E82BAE1FDFF3CD00EE53D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04566EEE1FE309D800C0F5D1 /* libz.tbd */,
 				0454530D1FE2DF780076EFC8 /* FBSDKShareKit.framework */,
 				0454530B1FE2DF630076EFC8 /* FBSDKLoginKit.framework */,
 				045452D61FE2DF310076EFC8 /* Bolts.framework */,
@@ -649,6 +679,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */,
 				04566E451FE2EB8500C0F5D1 /* RNAccountKit.xcodeproj */,
 				0454530F1FE2DF940076EFC8 /* RCTFBSDK.xcodeproj */,
 				04E82BA81FDFF3BC00EE53D1 /* ReactNativeNavigation.xcodeproj */,
@@ -846,6 +877,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 04566EBE1FE3099800C0F5D1 /* Products */;
+					ProjectRef = 04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -1010,6 +1045,20 @@
 			fileType = archive.ar;
 			path = libRNAccountKit.a;
 			remoteRef = 04566E491FE2EB8500C0F5D1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04566EC31FE3099900C0F5D1 /* libCodePush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCodePush.a;
+			remoteRef = 04566EC21FE3099900C0F5D1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		04566EC51FE3099900C0F5D1 /* libCodePush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCodePush.a;
+			remoteRef = 04566EC41FE3099900C0F5D1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		04E82B901FDFF38500EE53D1 /* libRCTBlob-tvOS.a */ = {
@@ -1405,6 +1454,9 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios",
 					"$(SRCROOT)/../node_modules/react-native-facebook-account-kit/ios",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 				INFOPLIST_FILE = RNBoot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1433,6 +1485,9 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios",
 					"$(SRCROOT)/../node_modules/react-native-facebook-account-kit/ios",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 				INFOPLIST_FILE = RNBoot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
