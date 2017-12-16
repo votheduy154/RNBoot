@@ -2,16 +2,14 @@ import React from 'react';
 import { View, Text, Button, StyleSheet, Alert, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
-// import RNAccountKit from 'react-native-facebook-account-kit';
 import AccountKit, { LoginButton, Color, StatusBarStyle } from 'react-native-facebook-account-kit';
-
+import CodePush from 'react-native-code-push';
 // import LinearGradient from 'react-native-linear-gradient';
 // import Svg, { Circle, Rect } from 'react-native-svg';
-// import codePush from 'react-native-code-push';
 
-// const codePushOptions = {
-//   checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
-// };
+const codePushOptions = {
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -65,9 +63,14 @@ class HomeScreen extends React.Component {
       fbData: '',
       authToken: null,
       loggedAccount: null,
+      restartAllowed: true,
     };
   }
   componentWillMount() {
+    CodePush.sync({
+      updateDialog: true,
+      installMode: CodePush.InstallMode.IMMEDIATE,
+    });
     this.configureAccountKit();
     AccountKit.getCurrentAccessToken()
       .then((token) => {
@@ -84,6 +87,13 @@ class HomeScreen extends React.Component {
       })
       .catch(e => console.log('Failed to get current access token', e));
   }
+  testCodePush = () => {
+    CodePush.sync({
+      updateDialog: true,
+      installMode: CodePush.InstallMode.IMMEDIATE,
+    });
+  };
+
   configureAccountKit = () => {
     AccountKit.configure({
       theme: {
@@ -152,13 +162,11 @@ class HomeScreen extends React.Component {
 
   renderUserLogged() {
     const { id, email, phoneNumber } = this.state.loggedAccount;
-
     return (
       <View>
         <TouchableOpacity style={styles.button} onPress={() => this.onLogoutPressed()}>
           <Text style={styles.buttonText}>Logout</Text>
         </TouchableOpacity>
-
         <Text style={styles.label}>Account Kit Id</Text>
         <Text style={styles.text}>{id}</Text>
         <Text style={styles.label}>Email</Text>
@@ -182,7 +190,6 @@ class HomeScreen extends React.Component {
         >
           <Text style={styles.buttonText}>SMS</Text>
         </LoginButton>
-
         <TouchableOpacity style={styles.button} onPress={() => this.onEmailLoginPressed()}>
           <Text style={styles.buttonText}>Email</Text>
         </TouchableOpacity>
@@ -190,18 +197,6 @@ class HomeScreen extends React.Component {
     );
   }
 
-  // componentWillMount() {
-  //   codePush.sync({
-  //     updateDialog: true,
-  //     installMode: codePush.InstallMode.IMMEDIATE,
-  //   });
-  // }
-  // testCodePush() {
-  //   this.codePush.sync({
-  //     updateDialog: true,
-  //     installMode: codePush.InstallMode.IMMEDIATE,
-  //   });
-  // }
   XinChao() {
     this.props.navigator.push({
       screen: 'RNBoot.DemoScreen',
@@ -268,6 +263,7 @@ class HomeScreen extends React.Component {
         <View style={styles.container}>
           {this.state.loggedAccount ? this.renderUserLogged() : this.renderLogin()}
         </View>
+        <Text>ahihi</Text>
         {/* <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
           <Text style={styles.buttonText}>Sign in with Facebook 123</Text>
         </LinearGradient>
@@ -275,20 +271,6 @@ class HomeScreen extends React.Component {
           <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
           <Rect x="15" y="15" width="70" height="70" stroke="red" strokeWidth="2" fill="yellow" />
         </Svg> */}
-        {/* <LoginButton
-          publishPermissions={['publish_actions']}
-          onLoginFinished={(error, result) => {
-            if (error) {
-              alert(`Login failed with error: ${result.error}`);
-            } else if (result.isCancelled) {
-              alert('Login was cancelled');
-            } else {
-              alert(`Login was successful with permissions: ${result.grantedPermissions}`);
-            }
-          }}
-          onLogoutFinished={() => alert('User logged out')}
-        /> */}
-
         <Text style={{ fontSize: 20 }}>This...</Text>
         <Button color="red" title="TEST CODE PUSH" onPress={() => this.testCodePush()} />
         <Text style={{ fontSize: 20 }}>This...</Text>
@@ -298,4 +280,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen;
+export default CodePush(codePushOptions)(HomeScreen);
