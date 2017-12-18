@@ -5,7 +5,7 @@ import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 're
 import AccountKit, { LoginButton, Color, StatusBarStyle } from 'react-native-facebook-account-kit';
 import CodePush from 'react-native-code-push';
 import DeviceInfo from 'react-native-device-info';
-// import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 // import Svg, { Circle, Rect } from 'react-native-svg';
 
 const codePushOptions = {
@@ -265,9 +265,10 @@ class HomeScreen extends React.Component {
           {this.state.loggedAccount ? this.renderUserLogged() : this.renderLogin()}
         </View>
         <Text>{DeviceInfo.getUniqueID()}</Text>
-        {/* <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
+        <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
           <Text style={styles.buttonText}>Sign in with Facebook 123</Text>
         </LinearGradient>
+        {/*
         <Svg height="100" width="100">
           <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
           <Rect x="15" y="15" width="70" height="70" stroke="red" strokeWidth="2" fill="yellow" />
