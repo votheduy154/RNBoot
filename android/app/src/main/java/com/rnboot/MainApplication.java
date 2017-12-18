@@ -12,6 +12,8 @@ import com.facebook.soloader.SoLoader;
 import android.support.annotation.Nullable;
 import com.reactnativenavigation.NavigationApplication;
 
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+
 import android.content.Intent;
 import com.reactnativenavigation.controllers.ActivityCallbacks;
 import com.facebook.CallbackManager;
@@ -81,6 +83,7 @@ public class MainApplication extends NavigationApplication {
         new VectorIconsPackage(),
         new FBSDKPackage(mCallbackManager),
         new RNAccountKitPackage(),
+        new RNDeviceInfo(),
         new CodePush("jBkuV7VDQYOhSBH6GNHRhZxOo4GUfc6e71db-3dfa-4437-aa10-1fc24d167e6d", MainApplication.this, BuildConfig.DEBUG)
     );
   }
