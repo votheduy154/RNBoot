@@ -12,6 +12,8 @@ import com.facebook.soloader.SoLoader;
 import android.support.annotation.Nullable;
 import com.reactnativenavigation.NavigationApplication;
 
+import com.horcrux.svg.SvgPackage;
+
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 
 import com.BV.LinearGradient.LinearGradientPackage;
@@ -87,6 +89,7 @@ public class MainApplication extends NavigationApplication {
         new RNAccountKitPackage(),
         new RNDeviceInfo(),
         new LinearGradientPackage(),
+        new SvgPackage(),
         new CodePush("jBkuV7VDQYOhSBH6GNHRhZxOo4GUfc6e71db-3dfa-4437-aa10-1fc24d167e6d", MainApplication.this, BuildConfig.DEBUG)
     );
   }

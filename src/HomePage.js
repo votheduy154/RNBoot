@@ -6,7 +6,7 @@ import AccountKit, { LoginButton, Color, StatusBarStyle } from 'react-native-fac
 import CodePush from 'react-native-code-push';
 import DeviceInfo from 'react-native-device-info';
 import LinearGradient from 'react-native-linear-gradient';
-// import Svg, { Circle, Rect } from 'react-native-svg';
+import Svg, { Circle, Rect } from 'react-native-svg';
 
 const codePushOptions = {
   checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
@@ -268,11 +268,10 @@ class HomeScreen extends React.Component {
         <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
           <Text style={styles.buttonText}>Sign in with Facebook 123</Text>
         </LinearGradient>
-        {/*
         <Svg height="100" width="100">
           <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
           <Rect x="15" y="15" width="70" height="70" stroke="red" strokeWidth="2" fill="yellow" />
-        </Svg> */}
+        </Svg>
         <Text style={{ fontSize: 20 }}>This...</Text>
         <Button color="red" title="TEST CODE PUSH" onPress={() => this.testCodePush()} />
         <Text style={{ fontSize: 20 }}>This...</Text>
