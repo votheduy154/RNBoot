@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 import AccountKit, { LoginButton, Color, StatusBarStyle } from 'react-native-facebook-account-kit';
 import CodePush from 'react-native-code-push';
+import DeviceInfo from 'react-native-device-info';
 // import LinearGradient from 'react-native-linear-gradient';
 // import Svg, { Circle, Rect } from 'react-native-svg';
 
@@ -263,7 +264,7 @@ class HomeScreen extends React.Component {
         <View style={styles.container}>
           {this.state.loggedAccount ? this.renderUserLogged() : this.renderLogin()}
         </View>
-        <Text>ahihi</Text>
+        <Text>{DeviceInfo.getUniqueID()}</Text>
         {/* <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
           <Text style={styles.buttonText}>Sign in with Facebook 123</Text>
         </LinearGradient>

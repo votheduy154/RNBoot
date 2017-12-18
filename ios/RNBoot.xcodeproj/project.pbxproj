@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* RNBootTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNBootTests.m */; };
+		042C67731FE77A1F00522E0F /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C676F1FE779FE00522E0F /* libRNDeviceInfo.a */; };
 		045453081FE2DF310076EFC8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045452D61FE2DF310076EFC8 /* Bolts.framework */; };
 		0454530A1FE2DF540076EFC8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045453091FE2DF540076EFC8 /* FBSDKCoreKit.framework */; };
 		0454530C1FE2DF630076EFC8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0454530B1FE2DF630076EFC8 /* FBSDKLoginKit.framework */; };
@@ -104,6 +105,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = RNBoot;
+		};
+		042C676E1FE779FE00522E0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		042C67701FE779FE00522E0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
+			remoteInfo = "RNDeviceInfo-tvOS";
 		};
 		045452FA1FE2DF310076EFC8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -376,6 +391,7 @@
 		00E356EE1AD99517003FC87E /* RNBootTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNBootTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNBootTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBootTests.m; sourceTree = "<group>"; };
+		042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		045452D61FE2DF310076EFC8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		045453091FE2DF540076EFC8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		0454530B1FE2DF630076EFC8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -431,6 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042C67731FE77A1F00522E0F /* libRNDeviceInfo.a in Frameworks */,
 				04566EED1FE309BB00C0F5D1 /* libCodePush.a in Frameworks */,
 				04566EEF1FE309D800C0F5D1 /* libz.tbd in Frameworks */,
 				04566E9D1FE2EC2B00C0F5D1 /* libRNAccountKit.a in Frameworks */,
@@ -540,6 +557,15 @@
 				00E356F11AD99517003FC87E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		042C67421FE779FE00522E0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				042C676F1FE779FE00522E0F /* libRNDeviceInfo.a */,
+				042C67711FE779FE00522E0F /* libRNDeviceInfo-tvOS.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		045453101FE2DF940076EFC8 /* Products */ = {
@@ -679,6 +705,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */,
 				04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */,
 				04566E451FE2EB8500C0F5D1 /* RNAccountKit.xcodeproj */,
 				0454530F1FE2DF940076EFC8 /* RCTFBSDK.xcodeproj */,
@@ -941,6 +968,10 @@
 					ProjectRef = 04566E451FE2EB8500C0F5D1 /* RNAccountKit.xcodeproj */;
 				},
 				{
+					ProductGroup = 042C67421FE779FE00522E0F /* Products */;
+					ProjectRef = 042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */;
+				},
+				{
 					ProductGroup = 04E82B881FDFF38500EE53D1 /* Products */;
 					ProjectRef = B32D18C42C2C4226895ECA2D /* RNVectorIcons.xcodeproj */;
 				},
@@ -989,6 +1020,20 @@
 			fileType = archive.ar;
 			path = libRCTVibration.a;
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		042C676F1FE779FE00522E0F /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = 042C676E1FE779FE00522E0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		042C67711FE779FE00522E0F /* libRNDeviceInfo-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNDeviceInfo-tvOS.a";
+			remoteRef = 042C67701FE779FE00522E0F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		045452FB1FE2DF310076EFC8 /* libthird-party.a */ = {
