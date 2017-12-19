@@ -15,6 +15,7 @@
 		00E356F31AD99517003FC87E /* RNBootTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNBootTests.m */; };
 		040424131FE7A41A00B661D2 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040424101FE7A41200B661D2 /* libBVLinearGradient.a */; };
 		040424961FE7B00400B661D2 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 040424921FE7AFF500B661D2 /* libRNSVG.a */; };
+		0409F6E71FE7BD0B00758E46 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0409F6E31FE7BCF000758E46 /* libRNImagePicker.a */; };
 		042C67731FE77A1F00522E0F /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C676F1FE779FE00522E0F /* libRNDeviceInfo.a */; };
 		045453081FE2DF310076EFC8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045452D61FE2DF310076EFC8 /* Bolts.framework */; };
 		0454530A1FE2DF540076EFC8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045453091FE2DF540076EFC8 /* FBSDKCoreKit.framework */; };
@@ -135,6 +136,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 94DDAC5C1F3D024300EED511;
 			remoteInfo = "RNSVG-tvOS";
+		};
+		0409F6E21FE7BCF000758E46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0409F6B21FE7BCF000758E46 /* RNImagePicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
+			remoteInfo = RNImagePicker;
 		};
 		042C676E1FE779FE00522E0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -423,6 +431,7 @@
 		00E356F21AD99517003FC87E /* RNBootTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBootTests.m; sourceTree = "<group>"; };
 		0404240A1FE7A41100B661D2 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		0404245E1FE7AFF500B661D2 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
+		0409F6B21FE7BCF000758E46 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		045452D61FE2DF310076EFC8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		045453091FE2DF540076EFC8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -479,6 +488,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0409F6E71FE7BD0B00758E46 /* libRNImagePicker.a in Frameworks */,
 				040424961FE7B00400B661D2 /* libRNSVG.a in Frameworks */,
 				040424131FE7A41A00B661D2 /* libBVLinearGradient.a in Frameworks */,
 				042C67731FE77A1F00522E0F /* libRNDeviceInfo.a in Frameworks */,
@@ -607,6 +617,14 @@
 			children = (
 				040424921FE7AFF500B661D2 /* libRNSVG.a */,
 				040424941FE7AFF500B661D2 /* libRNSVG-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0409F6B31FE7BCF000758E46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0409F6E31FE7BCF000758E46 /* libRNImagePicker.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -757,6 +775,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0409F6B21FE7BCF000758E46 /* RNImagePicker.xcodeproj */,
 				0404245E1FE7AFF500B661D2 /* RNSVG.xcodeproj */,
 				0404240A1FE7A41100B661D2 /* BVLinearGradient.xcodeproj */,
 				042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */,
@@ -934,6 +953,10 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = NSYF7G25K3;
+						ProvisioningStyle = Automatic;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -1030,6 +1053,10 @@
 					ProjectRef = 042C67411FE779FE00522E0F /* RNDeviceInfo.xcodeproj */;
 				},
 				{
+					ProductGroup = 0409F6B31FE7BCF000758E46 /* Products */;
+					ProjectRef = 0409F6B21FE7BCF000758E46 /* RNImagePicker.xcodeproj */;
+				},
+				{
 					ProductGroup = 0404245F1FE7AFF500B661D2 /* Products */;
 					ProjectRef = 0404245E1FE7AFF500B661D2 /* RNSVG.xcodeproj */;
 				},
@@ -1110,6 +1137,13 @@
 			fileType = archive.ar;
 			path = "libRNSVG-tvOS.a";
 			remoteRef = 040424931FE7AFF500B661D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0409F6E31FE7BCF000758E46 /* libRNImagePicker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNImagePicker.a;
+			remoteRef = 0409F6E21FE7BCF000758E46 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		042C676F1FE779FE00522E0F /* libRNDeviceInfo.a */ = {
@@ -1577,8 +1611,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = NSYF7G25K3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1601,6 +1638,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = RNBoot;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1609,7 +1647,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NSYF7G25K3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1632,6 +1673,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = RNBoot;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
