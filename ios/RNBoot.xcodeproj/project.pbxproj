@@ -27,6 +27,7 @@
 		04566E9D1FE2EC2B00C0F5D1 /* libRNAccountKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566E4A1FE2EB8500C0F5D1 /* libRNAccountKit.a */; };
 		04566EED1FE309BB00C0F5D1 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566EC31FE3099900C0F5D1 /* libCodePush.a */; };
 		04566EEF1FE309D800C0F5D1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04566EEE1FE309D800C0F5D1 /* libz.tbd */; };
+		048716531FE99D1500C16BCF /* libReactNativeLocalization.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0487164A1FE99D0200C16BCF /* libReactNativeLocalization.a */; };
 		04E82BAF1FDFF3CD00EE53D1 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E82BAD1FDFF3BC00EE53D1 /* libReactNativeNavigation.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -227,6 +228,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = F886647B1F4ADB500036D01B;
 			remoteInfo = "CodePush-tvOS";
+		};
+		048716491FE99D0200C16BCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0487161D1FE99D0200C16BCF /* ReactNativeLocalization.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7B5D9D0A1B6AD0EA00CF3A83;
+			remoteInfo = ReactNativeLocalization;
 		};
 		04E82B8F1FDFF38500EE53D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -443,6 +451,7 @@
 		04566E451FE2EB8500C0F5D1 /* RNAccountKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAccountKit.xcodeproj; path = "../node_modules/react-native-facebook-account-kit/ios/RNAccountKit.xcodeproj"; sourceTree = "<group>"; };
 		04566EBD1FE3099800C0F5D1 /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		04566EEE1FE309D800C0F5D1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0487161D1FE99D0200C16BCF /* ReactNativeLocalization.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeLocalization.xcodeproj; path = "../node_modules/react-native-localization/ReactNativeLocalization.xcodeproj"; sourceTree = "<group>"; };
 		04E82BA81FDFF3BC00EE53D1 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -488,6 +497,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048716531FE99D1500C16BCF /* libReactNativeLocalization.a in Frameworks */,
 				0409F6E71FE7BD0B00758E46 /* libRNImagePicker.a in Frameworks */,
 				040424961FE7B00400B661D2 /* libRNSVG.a in Frameworks */,
 				040424131FE7A41A00B661D2 /* libBVLinearGradient.a in Frameworks */,
@@ -663,6 +673,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0487161E1FE99D0200C16BCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0487164A1FE99D0200C16BCF /* libReactNativeLocalization.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		04E82B871FDFF38300EE53D1 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +793,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0487161D1FE99D0200C16BCF /* ReactNativeLocalization.xcodeproj */,
 				0409F6B21FE7BCF000758E46 /* RNImagePicker.xcodeproj */,
 				0404245E1FE7AFF500B661D2 /* RNSVG.xcodeproj */,
 				0404240A1FE7A41100B661D2 /* BVLinearGradient.xcodeproj */,
@@ -1041,6 +1060,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 0487161E1FE99D0200C16BCF /* Products */;
+					ProjectRef = 0487161D1FE99D0200C16BCF /* ReactNativeLocalization.xcodeproj */;
+				},
+				{
 					ProductGroup = 04E82BA91FDFF3BC00EE53D1 /* Products */;
 					ProjectRef = 04E82BA81FDFF3BC00EE53D1 /* ReactNativeNavigation.xcodeproj */;
 				},
@@ -1228,6 +1251,13 @@
 			fileType = archive.ar;
 			path = libCodePush.a;
 			remoteRef = 04566EC41FE3099900C0F5D1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0487164A1FE99D0200C16BCF /* libReactNativeLocalization.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeLocalization.a;
+			remoteRef = 048716491FE99D0200C16BCF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		04E82B901FDFF38500EE53D1 /* libRCTBlob-tvOS.a */ = {
@@ -1626,6 +1656,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios",
 					"$(SRCROOT)/../node_modules/react-native-facebook-account-kit/ios",
+					"$(SRCROOT)/../node_modules/react-native-localization",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../react-native/React/**",
 					"$(SRCROOT)/../../React/**",
@@ -1661,6 +1692,7 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-navigation/ios",
 					"$(SRCROOT)/../node_modules/react-native-facebook-account-kit/ios",
+					"$(SRCROOT)/../node_modules/react-native-localization",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 					"$(SRCROOT)/../react-native/React/**",
 					"$(SRCROOT)/../../React/**",
