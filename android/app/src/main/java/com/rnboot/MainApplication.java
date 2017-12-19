@@ -20,6 +20,8 @@ import com.learnium.RNDeviceInfo.RNDeviceInfo;
 
 import com.BV.LinearGradient.LinearGradientPackage;
 
+import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
+
 import android.content.Intent;
 import com.reactnativenavigation.controllers.ActivityCallbacks;
 import com.facebook.CallbackManager;
@@ -92,6 +94,7 @@ public class MainApplication extends NavigationApplication {
         new RNDeviceInfo(),
         new LinearGradientPackage(),
         new SvgPackage(),
+        new ReactNativeLocalizationPackage(),
         new ImagePickerPackage(),
         new CodePush("jBkuV7VDQYOhSBH6GNHRhZxOo4GUfc6e71db-3dfa-4437-aa10-1fc24d167e6d", MainApplication.this, BuildConfig.DEBUG)
     );

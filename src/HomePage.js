@@ -10,6 +10,7 @@ import {
   PixelRatio,
   ScrollView
 } from 'react-native';
+import LocalizedStrings from 'react-native-localization';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 import AccountKit, { LoginButton, Color, StatusBarStyle } from 'react-native-facebook-account-kit';
@@ -27,6 +28,21 @@ const options = {
     path: 'images'
   }
 };
+
+const strings = new LocalizedStrings({
+  en: {
+    how: 'How do you want your egg today 123?',
+    boiledEgg: 'Boiled egg',
+    softBoiledEgg: 'Soft-boiled egg',
+    choice: 'How to choose the egg'
+  },
+  vi: {
+    how: 'day la tieng viet',
+    boiledEgg: '123',
+    softBoiledEgg: '456',
+    choice: '789'
+  }
+});
 
 const codePushOptions = {
   checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME
@@ -290,6 +306,8 @@ class HomeScreen extends React.Component {
   }
 
   render() {
+    console.log(strings.getInterfaceLanguage());
+    console.log(strings.getLanguage());
     return (
       <ScrollView>
         <Text style={{ fontSize: 20 }}>{this.state.fbData}</Text>
@@ -327,6 +345,9 @@ class HomeScreen extends React.Component {
           <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
           <Rect x="15" y="15" width="70" height="70" stroke="red" strokeWidth="2" fill="yellow" />
         </Svg> */}
+
+        <Text style={styles.title}>{strings.how}</Text>
+
         <Text
           style={{ color: '#841584', textAlign: 'center', marginTop: 20, fontSize: 30 }}
           onPress={() => this.testCodePush()}
