@@ -5,11 +5,11 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "ios:release": "react-native run-ios --simulator=\"iPhone 6\" --configuration Release",
-    "android:release": "react-native run-android --variant=release",
+    "ios:rl": "react-native run-ios --simulator=\"iPhone 6\" --configuration Release",
+    "android:rl": "react-native run-android --variant=release",
     "android:signedAPK": "cd android && ./gradlew assembleRelease",
-    "cp:ios:release": "code-push release-react RNBoot_ios ios --deploymentName Production -m --noDuplicateReleaseError",
-    "cp:android:release": "code-push release-react RNBoot_android android --deploymentName Production -m --noDuplicateReleaseError"
+    "cp:ios:rl": "code-push release-react RNBoot_ios ios --deploymentName Production -m --noDuplicateReleaseError",
+    "cp:android:rl": "code-push release-react RNBoot_android android --deploymentName Production -m --noDuplicateReleaseError"
   },
   "dependencies": {
     "react": "16.0.0",

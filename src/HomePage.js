@@ -1,5 +1,15 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Alert, TouchableOpacity, Image, PixelRatio } from 'react-native';
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
+  Image,
+  PixelRatio,
+  ScrollView
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 import AccountKit, { LoginButton, Color, StatusBarStyle } from 'react-native-facebook-account-kit';
@@ -14,61 +24,13 @@ const options = {
   customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
   storageOptions: {
     skipBackup: true,
-    path: 'images',
-  },
+    path: 'images'
+  }
 };
 
 const codePushOptions = {
-  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  button: {
-    height: 50,
-    width: 300,
-    backgroundColor: 'green',
-    marginBottom: 10,
-  },
-  buttonText: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  label: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    marginTop: 20,
-  },
-  text: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  linearGradient: {
-    height: 100,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
-  },
-  avatarContainer: {
-    borderColor: '#9B9B9B',
-    borderWidth: 1 / PixelRatio.get(),
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  avatar: {
-    borderRadius: 75,
-    width: 150,
-    height: 150,
-  },
-});
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -79,13 +41,13 @@ class HomeScreen extends React.Component {
       loggedAccount: null,
       restartAllowed: true,
       avatarSource: null,
-      videoSource: null,
+      videoSource: null
     };
   }
   componentWillMount() {
     CodePush.sync({
       updateDialog: true,
-      installMode: CodePush.InstallMode.IMMEDIATE,
+      installMode: CodePush.InstallMode.IMMEDIATE
     });
     this.configureAccountKit();
     AccountKit.getCurrentAccessToken()
@@ -94,7 +56,7 @@ class HomeScreen extends React.Component {
           AccountKit.getCurrentAccount().then((account) => {
             this.setState({
               authToken: token,
-              loggedAccount: account,
+              loggedAccount: account
             });
           });
         } else {
@@ -103,10 +65,11 @@ class HomeScreen extends React.Component {
       })
       .catch(e => console.log('Failed to get current access token', e));
   }
+
   testCodePush = () => {
     CodePush.sync({
       updateDialog: true,
-      installMode: CodePush.InstallMode.IMMEDIATE,
+      installMode: CodePush.InstallMode.IMMEDIATE
     });
   };
 
@@ -135,7 +98,7 @@ class HomeScreen extends React.Component {
       // defaultCountry: 'VI',
       initialEmail: 'example.com',
       initialPhoneCountryPrefix: '+84',
-      initialPhoneNumber: '',
+      initialPhoneNumber: ''
     });
   };
 
@@ -147,7 +110,7 @@ class HomeScreen extends React.Component {
       AccountKit.getCurrentAccount().then((account) => {
         this.setState({
           authToken: token,
-          loggedAccount: account,
+          loggedAccount: account
         });
       });
     }
@@ -170,7 +133,7 @@ class HomeScreen extends React.Component {
       .then(() => {
         this.setState({
           authToken: null,
-          loggedAccount: null,
+          loggedAccount: null
         });
       })
       .catch(e => console.log('Failed to logout'));
@@ -216,7 +179,7 @@ class HomeScreen extends React.Component {
   XinChao() {
     this.props.navigator.push({
       screen: 'RNBoot.DemoScreen',
-      title: 'Xin chao',
+      title: 'Xin chao'
     });
   }
 
@@ -228,7 +191,7 @@ class HomeScreen extends React.Component {
       'email',
       'user_likes',
       'user_photos',
-      'user_location',
+      'user_location'
     ]).then(
       (result) => {
         if (result.isCancelled === true) {
@@ -238,9 +201,9 @@ class HomeScreen extends React.Component {
             if (data) {
               const { accessToken } = data;
               const responseInfoCallback = (error, dataFB) => {
-                // console.log(dataFB);
+                console.log(dataFB);
                 this.setState({
-                  fbData: `${dataFB.name} - ${dataFB.birthday} - ${dataFB.email}`,
+                  fbData: `${dataFB.name} - ${dataFB.birthday} - ${dataFB.email}`
                 });
               };
               const infoRequest = new GraphRequest(
@@ -250,11 +213,11 @@ class HomeScreen extends React.Component {
                   parameters: {
                     fields: {
                       string:
-                        'email,name, first_name, middle_name, last_name, birthday, picture.width(150).height(150)',
-                    },
-                  },
+                        'email,name, first_name, middle_name, last_name, birthday, picture.width(150).height(150)'
+                    }
+                  }
                 },
-                responseInfoCallback,
+                responseInfoCallback
               );
               // Start the graph request.
               new GraphRequestManager().addRequest(infoRequest).start();
@@ -265,7 +228,7 @@ class HomeScreen extends React.Component {
       (error) => {
         // error
         console.log(error);
-      },
+      }
     );
   };
 
@@ -275,8 +238,8 @@ class HomeScreen extends React.Component {
       maxWidth: 500,
       maxHeight: 500,
       storageOptions: {
-        skipBackup: true,
-      },
+        skipBackup: true
+      }
     };
 
     ImagePicker.showImagePicker(options, (response) => {
@@ -295,7 +258,7 @@ class HomeScreen extends React.Component {
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
 
         this.setState({
-          avatarSource: source,
+          avatarSource: source
         });
       }
     });
@@ -306,7 +269,7 @@ class HomeScreen extends React.Component {
       title: 'Video Picker',
       takePhotoButtonTitle: 'Take Video...',
       mediaType: 'video',
-      videoQuality: 'medium',
+      videoQuality: 'medium'
     };
 
     ImagePicker.showImagePicker(options, (response) => {
@@ -320,7 +283,7 @@ class HomeScreen extends React.Component {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         this.setState({
-          videoSource: response.uri,
+          videoSource: response.uri
         });
       }
     });
@@ -328,27 +291,28 @@ class HomeScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <ScrollView>
         <Text style={{ fontSize: 20 }}>{this.state.fbData}</Text>
         <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={() => this.loginFB()}>
           Login Facebook
         </Icon.Button>
 
-        <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
-          <View style={[styles.avatar, styles.avatarContainer, { marginBottom: 20 }]}>
-            {this.state.avatarSource === null ? (
-              <Text>Select a Photo</Text>
-            ) : (
-              <Image style={styles.avatar} source={this.state.avatarSource} />
-            )}
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={this.selectVideoTapped.bind(this)}>
-          <View style={[styles.avatar, styles.avatarContainer]}>
-            <Text>Select a Video</Text>
-          </View>
-        </TouchableOpacity>
+        <View style={{ alignItems: 'center' }}>
+          <TouchableOpacity onPress={() => this.selectPhotoTapped()}>
+            <View style={[styles.avatar, styles.avatarContainer, { marginBottom: 20, marginTop: 20 }]}>
+              {this.state.avatarSource === null ? (
+                <Text>Select a Photo</Text>
+              ) : (
+                <Image style={styles.avatar} source={this.state.avatarSource} />
+              )}
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.selectVideoTapped()}>
+            <View style={[styles.avatar, styles.avatarContainer]}>
+              <Text>Select a Video</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
 
         {this.state.videoSource && (
           <Text style={{ margin: 8, textAlign: 'center' }}>{this.state.videoSource}</Text>
@@ -358,20 +322,75 @@ class HomeScreen extends React.Component {
           {this.state.loggedAccount ? this.renderUserLogged() : this.renderLogin()}
         </View>
         <Text>{DeviceInfo.getUniqueID()}</Text>
-        <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
-          <Text style={styles.buttonText}>Sign in with Facebook 123</Text>
-        </LinearGradient>
+        {/* <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient} />
         <Svg height="100" width="100">
           <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
           <Rect x="15" y="15" width="70" height="70" stroke="red" strokeWidth="2" fill="yellow" />
-        </Svg>
-        <Text style={{ fontSize: 20 }}>This...</Text>
-        <Button color="red" title="TEST CODE PUSH" onPress={() => this.testCodePush()} />
-        <Text style={{ fontSize: 20 }}>This...</Text>
-        <Button title="Learn More" color="#841584" onPress={() => this.XinChao()} />
-      </View>
+        </Svg> */}
+        <Text
+          style={{ color: '#841584', textAlign: 'center', marginTop: 20, fontSize: 30 }}
+          onPress={() => this.testCodePush()}
+        >
+          TEST CODE PUSH
+        </Text>
+        <Text
+          style={{ color: '#841584', textAlign: 'center', marginTop: 20, fontSize: 30 }}
+          onPress={() => this.XinChao()}
+        >
+          Learn More
+        </Text>
+      </ScrollView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  button: {
+    height: 50,
+    width: 300,
+    backgroundColor: 'green',
+    marginBottom: 10
+  },
+  buttonText: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10
+  },
+  label: {
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 20
+  },
+  text: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10
+  },
+  linearGradient: {
+    height: 100,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  avatarContainer: {
+    borderColor: '#9B9B9B',
+    borderWidth: 1 / PixelRatio.get(),
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red'
+  },
+  avatar: {
+    borderRadius: 50,
+    width: 100,
+    height: 100
+  }
+});
 
 export default CodePush(codePushOptions)(HomeScreen);

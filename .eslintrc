@@ -19,6 +19,8 @@
     "node": true
   },
   "rules": {
+    "object-curly-newline": [0, { "multiline": true, "minProperties": 4 }],
+    "react/jsx-indent": [0 , 2],
     "no-unused-vars": 1,
     "max-len": [0, 160, 0],
     "react/prop-types": 0,

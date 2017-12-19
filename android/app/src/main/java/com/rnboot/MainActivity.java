@@ -33,9 +33,9 @@ public class MainActivity extends SplashActivity implements OnImagePickerPermiss
     // protected String getMainComponentName() {
     //     return "RNBoot";
     // }
-    // @Override
-    // public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    //     super.onActivityResult(requestCode, resultCode, data);
-    //     MainApplication.getCallbackManager().onActivityResult(requestCode, resultCode, data);
-    // }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        MainApplication.getCallbackManager().onActivityResult(requestCode, resultCode, data);
+    }
 }
