@@ -9,7 +9,7 @@ class DemoPage extends React.Component {
   onClick() {
     this.props.navigator.push({
       screen: 'RNBoot.HomeScreen',
-      title: 'Home',
+      title: 'Home'
     });
   }
   render() {
